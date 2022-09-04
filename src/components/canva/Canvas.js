@@ -6,6 +6,7 @@ import Tools from "./tools.js";
 import Card from "react-bootstrap/Card";
 import "./styles.css";
 
+
 export default function Canvas() {
   const [brushColor, setBrusholor] = useState("#444");
   const [lastPenColor] = useState("#444");
@@ -13,6 +14,9 @@ export default function Canvas() {
   const [brushRadius, setBrushRadius] = useState(10);
   const canvasRef = useRef(null);
   const canvasRef2 = useRef(null);
+
+  const [pattern1, setPattern1] = useState([])
+  const [pattern2, setPattern2] = useState([])
 
   const toolChange = React.useCallback(
     (tool) => {
@@ -56,11 +60,12 @@ export default function Canvas() {
       y.push(value);
       global.ycord.push(value);
     });
-
-    console.log(global.xcord);
-    console.log(global.ycord);
-
-    canvasRef2.current.loadSaveData(data);
+    setPattern1(global.xcord)
+    setPattern2(global.ycord)
+    
+    // canvasRef2.current.loadSaveData(data);
+    xcoord = []
+    ycoord = []
   };
 
   return (
@@ -71,7 +76,7 @@ export default function Canvas() {
             setBrushRadius={setBrushRadius}
             handleToolChange={toolChange}
             canvasRef={canvasRef}
-            brushRadius={brushRadius}
+            brushRadius={brushRadius}  
           />
         </Card>
         <Card className="canvass-container mt-5">

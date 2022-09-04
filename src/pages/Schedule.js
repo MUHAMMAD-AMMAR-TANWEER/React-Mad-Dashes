@@ -123,10 +123,10 @@ class LaserSchedule extends Component {
     console.log(this.state.userToken);
     console.log(this.state.Device);
     console.log("Date : " + JSON.stringify(this.state.Date));
-    alert("Date : " + JSON.stringify(this.state.Date));
-    alert("Date : " + JSON.stringify(this.state.Date).slice(1, 5));
-    alert("Date : " + JSON.stringify(this.state.Date).slice(6, 8));
-    alert("Date : " + JSON.stringify(this.state.Date).slice(9, 11));
+    // alert("Date : " + JSON.stringify(this.state.Date));
+    // alert("Date : " + JSON.stringify(this.state.Date).slice(1, 5));
+    // alert("Date : " + JSON.stringify(this.state.Date).slice(6, 8));
+    // alert("Date : " + JSON.stringify(this.state.Date).slice(9, 11));
     console.log(this.state.selectedValue);
     console.log(this.state.selectedValue1);
     console.log(this.state.Sound);
@@ -137,7 +137,7 @@ class LaserSchedule extends Component {
       alert("Please login first");
     } else {
       axios
-        .post(`http://165.227.123.50:5000/api/addSchedule`, {
+        .post(`https://app.maddashes.com:5000/api/addSchedule`, {
           Device: this.state.Device,
           Date: {
             Year: JSON.stringify(this.state.Date).slice(1, 5),

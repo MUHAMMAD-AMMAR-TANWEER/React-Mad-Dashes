@@ -3,7 +3,7 @@ import axios from "axios";
 import AppWrapper from "../wrapper/AppWrapper";
 import Button from "react-bootstrap/Button";
 import PageHeading from "../components/PageHeading/PageHeading";
-import DetailCard from "../components/DetailCard/DetailCard";
+import newDetailCard from "../pages/newDetaildCard"
 
 class AddDevice extends Component {
   constructor(props) {
@@ -42,7 +42,7 @@ class AddDevice extends Component {
       alert("Please Login First");
     } else {
       axios
-        .post(`http://165.227.123.50:5000/api/addDevice/`, user)
+        .post(`https://app.maddashes.com:5000/api/addDevice/`, user)
         .then((res) => {
           if (res.status === 200) {
             console.log("Device Added Successfully");
@@ -59,19 +59,18 @@ class AddDevice extends Component {
     }
   };
 
+
   render() {
     return (
       <>
         <div className="container-fluid">
-          <PageHeading title={"Add Device"} />
+          <PageHeading title={"Devices"} />
         </div>
         <div className="container mt-5">
           <div className="row">
-            <DetailCard
-              title={"Add Device-Insturction"}
-              desc={
-                "This card uses Bootstrap's default styling with no utility classes added. Global styles are the only things modifying the look and feel of this default card example."
-              }
+            <newDetailCard
+              title1={"Instructions to add a device"}
+              desc1={"my name is khan"}
             />
           </div>
         </div>

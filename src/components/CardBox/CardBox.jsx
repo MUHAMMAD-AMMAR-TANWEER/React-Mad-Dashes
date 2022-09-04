@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const CardBox = ({classTitle,title,url,iconName}) => {
+const CardBox = ({classTitle,title,url,iconName,viewText}) => {
   return (
     <div className="col-xl-3 col-md-6 mb-4">
     <div className={`card border-left-${classTitle} shadow h-100 py-2`}>
@@ -14,7 +14,7 @@ const CardBox = ({classTitle,title,url,iconName}) => {
                     </div>
                     <div className={`text-xs font-weight-bold text-${classTitle} text-uppercase mb-1 mt-2`}>
                         
-                        <Link to={url}>View</Link>
+                        <Link style={{textDecoration: "none"}} to={url}>Add / View {viewText}</Link>
                         </div>
                 </div>
                 <div className="col-auto">

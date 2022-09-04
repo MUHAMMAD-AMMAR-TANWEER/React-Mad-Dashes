@@ -47,7 +47,7 @@ const Login = () => {
 
     if (handleValidation()) {
       axios
-        .post("http://165.227.123.50:5000/api/login/", {
+        .post("https://app.maddashes.com:5000/api/login/", {
           email: email,
           password: password,
         })

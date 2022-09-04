@@ -3,25 +3,8 @@ import React, { Component } from "react";
 import AppWrapper from "../wrapper/AppWrapper";
 import PageHeading from "../components/PageHeading/PageHeading";
 import CardBox from "../components/CardBox/CardBox";
-import DetailCard from "../components/DetailCard/DetailCard";
 
-const detailCardBox = [
-  {
-    id: 0,
-    title: "Add Device",
-    desc: "This card uses Bootstrap's default styling with no utility classes added. Global styles are the only things modifying the look and feel of this default card example.",
-  },
-  {
-    id: 1,
-    title: "Play Schedule",
-    desc: "This card uses Bootstrap's default styling with no utility classes added. Global styles are the only things modifying the look and feel of this default card example.",
-  },
-  {
-    id: 2,
-    title: "Draw",
-    desc: "This card uses Bootstrap's default styling with no utility classes added. Global styles are the only things modifying the look and feel of this default card example.",
-  },
-];
+
 
 const cardBoxContent=[
   {
@@ -30,6 +13,7 @@ const cardBoxContent=[
     url:"/addDevice",
     classTitle:"primary",
     iconName:"fa-solid fa-microchip",
+    viewText:"ACE"
   },
   {
     id:1,
@@ -37,6 +21,7 @@ const cardBoxContent=[
     url:"/laserSchedule",
     classTitle:"success",
     iconName:"fa-table",
+    viewText:"ACE!"
   },
   {
     id:2,
@@ -44,6 +29,7 @@ const cardBoxContent=[
     url:"/draw",
     classTitle:"info",
     iconName:"fa-chart-area",
+    viewText:"ACE2"
   }
 ]
 
@@ -89,18 +75,14 @@ class Home extends Component {
             url={data.url}
             classTitle={data.classTitle}
             iconName={data.iconName} 
-            key={index}/>)
+            viewText={data.viewText}
+            key={index}
+            />)
           }
          
         </div>
 
-        <div className="container">
-          <div className="row mt-5 home-row">
-            {detailCardBox.map((data, index) => (
-              <DetailCard key={index} title={data.title} desc={data.desc} />
-            ))}
-          </div>
-        </div>
+       
       </>
     );
   }

@@ -7,6 +7,7 @@ import Canvas from "../components/canva/Canvas";
 import PageHeading from "../components/PageHeading/PageHeading";
 
 class Draw extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -19,6 +20,8 @@ class Draw extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+ 
+ 
   componentDidMount() {
     var token = localStorage.getItem("token");
     var d = localStorage.getItem("device");
@@ -55,7 +58,7 @@ class Draw extends Component {
     } else {
       console.log("esle is working");
       axios
-        .put(`http://165.227.123.50:5000/api/realTime`, {
+        .put(`http://app.maddashes.com:5000/api/realTime`, {
           Device: this.state.device,
           cord: a,
           shift: b,
@@ -81,9 +84,11 @@ class Draw extends Component {
     var Yarray = [];
 
     global.xcord.forEach((element) => {
-      // console.log(element)
+      console.log(element);
       Xarray.push(element);
     });
+    Xarray = []
+    // console.log("sdfhajshfas" ,Xarray);
 
     global.ycord.forEach((element) => {
       Yarray.push(element);
@@ -95,8 +100,9 @@ class Draw extends Component {
       console.log("Please login first");
       alert("Please login first");
     } else {
+
       axios
-        .post(`http://165.227.123.50:5000/api/addPattern`, {
+        .post(`https://app.maddashes.com:5000/api/addPattern`, {
           Device: this.state.device,
           Pattern: this.state.pattern,
           x: Xarray,
